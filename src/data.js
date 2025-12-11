@@ -95,6 +95,7 @@ export const Data = [
         image: TaskImg,
         stacks: [
             "React",
+            "Typescript",
             "Tailwindcss",
             "Material ui",
             "Nodejs",

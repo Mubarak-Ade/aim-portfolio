@@ -80,7 +80,7 @@ const ProjectCard = ({ data }) => {
 				<h2 className="text-xl font-bold mt-4">{data.name}</h2>
 				<p className="line-clamp-2">{data.info}</p>
 				<div className="flex flex-wrap gap-1">
-					{data.stacks.slice(0, 4).map((stack, index) => (
+					{data.stacks.map((stack, index) => (
 						<span
 							key={index}
 							className="px-4 cursor-pointer py-1 bg-custom-100/30 text-[10px] rounded-3xl border border-custom-400"

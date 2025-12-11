@@ -4,7 +4,7 @@ import { BsLayers } from "react-icons/bs";
 import { CiMonitor } from "react-icons/ci";
 import { FaCss3, FaHtml5, FaJsSquare, FaLayerGroup, FaNodeJs, FaReact, FaServer } from "react-icons/fa";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
-import { SiExpress, SiFramer, SiMongodb, SiRedux, SiShadcnui, SiTailwindcss } from "react-icons/si";
+import { SiExpress, SiFramer, SiMongodb, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 const data = {
 	title: "FullStack",
@@ -20,6 +20,11 @@ const data = {
 					title: "Html",
 					icon: <FaHtml5 />,
 					color: "text-orange-600 bg-white p-0",
+				},
+				{
+					title: "Typescript",
+					icon: <SiTypescript />,
+					color: "text-orange-600",
 				},
 				{
 					title: "Javascript",
