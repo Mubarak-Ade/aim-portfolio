@@ -252,14 +252,14 @@ const MobileNode = ({ node, level = 0 }) => {
 
 const Skill = () => {
 	return (
-		<div className="max-w-7xl mt-20 w-full block min-h-100 bg-custom-100/50 overflow-hidden p-10 m-auto rounded-2xl">
+		<div className="max-w-7xl mt-20 w-full block min-h-100 bg-custom-100/50 p-10 m-auto rounded-2xl">
 			<h1 className="text-4xl mb-4 font-bold text-white text-center">
 				My Skill
 			</h1>
 			<div className="lg:flex hidden  flex-col p-5 justify-center gap-5 ">
 				<Node node={data} />
 			</div>
-			<div className="flex flex-col w-full relative justify-center">
+			<div className="flex flex-col overflow-x-scroll w-full relative justify-center">
 				<MobileNode node={data} />
 			</div>
 		</div>

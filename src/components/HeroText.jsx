@@ -49,7 +49,7 @@ const HeroText = ({ activeStep }) => {
                     </motion.span>
                 ))}
             </h1>
-            <h2 className="text-4xl mt-2 text-slate-400 font-bold gap-4 flex items-center justify-center">
+            <h2 className="text-2xl mt-2 text-slate-400 font-bold gap-4 flex items-center justify-center">
                 {"Full-Stack Developer".split(" ").map((char, index) => (
                     <motion.span
                         key={index}
@@ -63,7 +63,7 @@ const HeroText = ({ activeStep }) => {
                 ))}
             </h2>
 
-            <p className="text-2xl mr-10 text-center mt-2 text-slate-400 font-bold gap-1 flex items-center justify-center">
+            <p className="text-xl mr-10 text-center mt-2 text-slate-400 font-bold gap-1 flex items-center justify-center">
                 {"Building scalable web applications"
                     .split(" ")
                     .map((char, index) => (

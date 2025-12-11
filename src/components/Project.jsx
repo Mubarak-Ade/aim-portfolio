@@ -6,7 +6,7 @@ import { FlameAnimation } from "../Animation/FlameAnimation";
 
 const Project = () => {
 	return (
-		<div className="relative h-full">
+		<div className="relative overflow-hidden h-full">
 			<AnimatePresence>
 				<div className="top-0 -z-10 left-0 h-full blur-xs grid grid-cols-17 place-items-center w-full absolute">
 					{[...Array(500)].map((_, i) => (

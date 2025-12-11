@@ -24,7 +24,7 @@ const AboutMe = () => {
         viewport={{
             once: true
         }}
-        className="w-full my-4 rounded-2xl m-auto p-10 ">
+        className="w-full overflow-hidden my-4 rounded-2xl m-auto p-10 ">
             <div className="flex justify-center mt-10 flex-col items-center">
                 <h1 className="text-5xl mt-4 text-primary font-bold">About Me</h1>
                 <motion.hr 
@@ -77,7 +77,7 @@ const AboutMe = () => {
                         writing clean, maintainable code and bringing both
                         creativity and structure to every project I touch.
                     </p>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex md:flex-row flex-col justify-center gap-4">
                         <button className="mt-4 bg-cyan-500 rounded-md shadow-2xl shadow-custom-500 font-semibold px-4 py-2.5 cursor-pointer">View My Project</button>
                         <button className="mt-4 border-cyan-500 border rounded-md shadow-2xl shadow-custom-500 font-semibold px-4 py-2.5 cursor-pointer">Let Connect</button>
                     </div>

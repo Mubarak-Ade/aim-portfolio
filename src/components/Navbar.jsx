@@ -49,7 +49,7 @@ const Navbar = () => {
 	};
 	return (
 		<>
-			<div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+			<div className="fixed top-4 w-full left-0 right-0 z-50 flex justify-center px-4">
 				<div className="w-full relative max-w-4xl shadow-[0_0_15px_rgba(6,182,212,0.15)] bg-custom-100 flex justify-between text-white border border-custom-400 px-6 py-4 items-center rounded-4xl">
 					<h1 className="font-playfair text-xl">AIM</h1>
 					<ul className="hidden md:flex items-center bg-custom-100  gap-10 text-base">
