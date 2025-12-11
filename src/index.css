@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import url('./font.css');
+
+@theme {
+	--color-custom-100: #0b1221;
+	--color-background: #030712;
+	--color-card: #0f172a;
+	--color-primary: #06b6d4;
+	--color-secondary: #64748b;
+	--font-montserrat: "montserrat";
+	--font-playfair: "playfair";
+	--background-image-blob: url('./assets/images/background/blob-haikei.svg');
+	--background-image-blob-scene: url('./assets/images/background/blob-scene-haikei.svg');
+	--background-image-blurry-gradient: url('./assets/images/background/blurry-gradient-haikei.svg');
+	--background-image-circle-scatter: url('./assets/images/background/circle-scatter-haikei_2.svg');
+	--background-image-layered-waves: url('./assets/images/background/layered-waves-haikei.svg');
+	--background-image-wave: url('./assets/images/background/wave-haikei.svg');
+}
+
+
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: var(--color-background);
+	display: "block";
+	overflow-x: hidden
+
+}
