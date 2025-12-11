@@ -18,7 +18,6 @@ export const Data = [
         stacks: ["React", "TypeScript", "Shadcn", "Nodejs", "MongoDB", "Expressjs", "Zustand"],
         github: "https://github.com/Mubarak-Ade/Blog-Website",
         live: "https://aim-blog.vercel.app",
-        images: []
     },
     {
         id: 1,
@@ -28,8 +27,7 @@ export const Data = [
         image: TailorImg,
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "https://github.com/Mubarak-Ade/Tailoring-Landing-page",
-        live: "https://tailoring-landing-page.vercel.app/",
-        images: []
+        live: "https://anike-fashion.vercel.app/",
     },
     {
         id: 2,
@@ -40,7 +38,6 @@ export const Data = [
         stacks: ["React", "Tailwind", "Framer motion", "React context Api"],
         github: "https://github.com/Mubarak-Ade/Laptop-E-commerce-website",
         live: "https://laptop-e-commerce-website.vercel.app/",
-        images: []
     },
     {
         id: 3,
@@ -51,7 +48,6 @@ export const Data = [
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "https://github.com/Mubarak-Ade/Mubaraq-Ade",
         live: "https://mubaraq-adeshina.vercel.app/",
-        images: []
     },
     {
         id: 4,
@@ -70,7 +66,6 @@ export const Data = [
         ],
         github: "",
         live: "",
-        images: []
     },
     {
         id: 5,
@@ -81,7 +76,6 @@ export const Data = [
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "",
         live: "",
-        images: []
     },
     {
         id: 6,
@@ -90,9 +84,8 @@ export const Data = [
         info: "A weather app that fetches real-time weather data using an external API. Built with React and TailwindCSS, displaying clean UI with temperature and location data.",
         image: WeatherImg,
         stacks: ["React", "Tailwind", "weather Api"],
-        github: "",
-        live: "",
-        images: []
+        github: "https://github.com/Mubarak-Ade/Mubaraq-Ade",
+        live: "https://weather-sphere-iota.vercel.app/",
     },
     {
         id: 7,
@@ -109,9 +102,8 @@ export const Data = [
             "MongoDB",
             "React Context Api",
         ],
-        github: "",
+        github: "https://github.com/Mubarak-Ade/Task-Manager",
         live: "",
-        images: []
     },
     {
         id: 8,
@@ -122,6 +114,5 @@ export const Data = [
         stacks: ["React", "Tailwindcss"],
         github: "",
         live: "",
-        images: []
     },
 ];
