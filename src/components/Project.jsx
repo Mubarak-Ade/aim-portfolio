@@ -1,10 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Data } from "../data";
 import { AnimatePresence, motion } from "motion/react";
 import { FlameAnimation } from "../Animation/FlameAnimation";
 
 const Project = () => {
+	const [isMobile, setIsMobile] = useState(false);
+	const [activeIndex, setActiveIndex] = useState(null);
+	const containerRef = useRef();
+
+	// Detect if device is touch
+	useEffect(() => {
+		const checkMobile = window.matchMedia("(hover: none)").matches;
+		setIsMobile(checkMobile);
+	}, []);
+
+	// Close active card if clicked outside
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (
+				containerRef.current &&
+				!containerRef.current.contains(event.target)
+			) {
+				setActiveIndex(null);
+			}
+		};
+		document.addEventListener("mousedown", handleClickOutside);
+		return () =>
+			document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
 	return (
 		<div className="relative overflow-hidden h-full">
 			<AnimatePresence>
@@ -52,15 +76,16 @@ const Project = () => {
 						that showcase my skills and passion
 					</p>
 				</div>
-				<div className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-y-20 auto-rows-fr">
-					{Data.map((data) => (
-						<div className="relative p-4">
-							<ProjectCard
-								data={data}
-								key={data.id}
-							/>
-							{/* <div className="h-10 w-full shadow-2xl -z-50 border bg-custom-200 border-custom-300 absolute -bottom-0 rounded-full"></div> */}
-						</div>
+				<div className="grid p-10 grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-y-28  auto-rows-fr">
+					{Data.map((data, index) => (
+						<ProjectCard
+							key={index}
+							data={data}
+							index={index}
+							isMobile={isMobile}
+							activeIndex={activeIndex}
+							setActiveIndex={setActiveIndex}
+						/>
 					))}
 				</div>
 			</div>

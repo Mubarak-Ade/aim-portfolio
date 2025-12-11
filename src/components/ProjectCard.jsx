@@ -1,32 +1,31 @@
 import { motion } from "motion/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlameAnimation } from "../Animation/FlameAnimation";
 import { Link } from "react-router";
 
-const ProjectCard = ({ data }) => {
-	const [isHovered, setIsHovered] = useState(false);
+const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
+	const isHovered = activeIndex === index;
 
 	return (
 		<motion.div
-			initial={{
-				y: 200,
-			}}
 			animate={{
-				y: 0,
+				boxShadow: isHovered ? "0 0 50px var(--color-cyan-400)" : "0 0 0px transparent",
+				scale: isHovered ? 1.05 : 1,
 			}}
-			onHoverStart={() => setIsHovered(true)}
-			onHoverEnd={() => setIsHovered(false)}
+			onHoverStart={() => !isMobile && setActiveIndex(index)}
+			onHoverEnd={() => !isMobile && setActiveIndex(null)}
 			transition={{
 				delay: 0.2,
 				duration: 0.5,
 			}}
-			whileHover={{
-				boxShadow: "0 0 50px var(--color-cyan-400)",
-				scale: 1.05,
-			}}
+			// whileHover={{
+			// 	boxShadow: "0 0 50px var(--color-cyan-400)",
+			// 	scale: 1.05,
+			// }}
+			onClick={() => isMobile && setActiveIndex(isHovered ? null : index)}
 			className="m4 relative max-w-sm h-full block border-2 text-white border-background shadow-custom-100 rounded-2xl space-y-4 bg-card shadow-[0_0_15px]"
 		>
-			<div className="relative overflow-hidden rounded-t-xl">
+			<div className="relative md:opacity-0 opacity-100 overflow-hidden rounded-t-xl">
 				<img
 					src={data.image}
 					alt={data.image}
