@@ -259,7 +259,7 @@ const Skill = () => {
 			<div className="lg:flex hidden  flex-col p-5 justify-center gap-5 ">
 				<Node node={data} />
 			</div>
-			<div className="flex flex-col overflow-x-scroll w-full relative justify-center">
+			<div className="flex flex-col overflow-x-auto w-full relative justify-center">
 				<MobileNode node={data} />
 			</div>
 		</div>

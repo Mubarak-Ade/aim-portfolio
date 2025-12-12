@@ -2,23 +2,28 @@ import { Route, Routes } from 'react-router'
 import './App.css'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
-import AboutMe from './components/AboutMe'
-import Hero from './components/Hero'
-import Project from './components/Project'
-import Contact from './components/Contact'
+import AboutMe from './pages/AboutMe'
+// import Hero from './pages/Hero'
+import Project from './pages/Project'
+import Contact from './pages/Contact'
+import { ProjectDetail } from './pages/ProjectDetail'
+import { BreadCrumbs } from './components/BreadCrumbs'
 
 function App() {
 
 	return (
-		<div className='relative'>
+		<>
 			<Navbar />
-			<Routes>
-				<Route path='/' element={<Hero />} />
-				<Route path='/about' element={<AboutMe />} />
-				<Route path='/project' element={<Project />} />
-				<Route path='/contact' element={<Contact />} />
-			</Routes>
-		</div>
+			<main className='relative overflow-hidden'>
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/projects/:slug' element={<ProjectDetail />} />
+					<Route path='/about' element={<AboutMe />} />
+					<Route path='/projects' element={<Project />} />
+					<Route path='/contact' element={<Contact />} />
+				</Routes>
+			</main>
+		</>
 	)
 }
 

@@ -6,15 +6,17 @@ import ECommerceImg from "./assets/images/project-img/e-commerce-screen.png";
 import WeatherImg from "./assets/images/project-img/weather-screen.png";
 import TodoImg from "./assets/images/project-img/todo_screen.png";
 import TreeviaImg from "./assets/images/project-img/treevia-screen.png";
-import BlogImage from "./assets/images/project-img/blog-screen.png";
+import BlogImage1 from "./assets/images/project-img/blog-screen.png";
+import BlogImage2 from "./assets/images/project-img/blog-screen_1.png";
+import BlogImage3 from "./assets/images/project-img/blog-screen_2.png";
 
 export const Data = [
     {
         id: 0,
         name: "Fullstack Blog Website",
-        role: "Fullstack",
+        category: "Fullstack",
         info: "A full-featured blog platform with user authentication, rich post editor, comments, and an admin dashboard. Built using React + TypeScript on the frontend, Shadcn UI for components, Zustand for client state, and a Node/Express + MongoDB backend.",
-        image: BlogImage,
+        images: [BlogImage1, BlogImage2, BlogImage3],
         stacks: ["React", "TypeScript", "Shadcn", "Nodejs", "MongoDB", "Expressjs", "Zustand"],
         github: "https://github.com/Mubarak-Ade/Blog-Website",
         live: "https://aim-blog.vercel.app",
@@ -22,9 +24,9 @@ export const Data = [
     {
         id: 1,
         name: "Tailor design landing page",
-        role: "Frontend",
+        category: "Frontend",
         info: "A sleek landing page for a fashion brand, designed to highlight products with elegance and responsiveness. Built with React, TailwindCSS and Framer motion, focusing on modern aesthetics and smooth user experience.",
-        image: TailorImg,
+        images: [TailorImg],
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "https://github.com/Mubarak-Ade/Tailoring-Landing-page",
         live: "https://anike-fashion.vercel.app/",
@@ -32,9 +34,9 @@ export const Data = [
     {
         id: 2,
         name: "Laptop sales E-Commerce website",
-        role: "Frontend",
+        category: "Frontend",
         info: "A clean, minimalist e-commerce web interface for laptop sales. Features product listings, cart functionality, and responsive layouts using React and TailwindCSS.",
-        image: ECommerceImg,
+        images: [ECommerceImg],
         stacks: ["React", "Tailwind", "Framer motion", "React context Api"],
         github: "https://github.com/Mubarak-Ade/Laptop-E-commerce-website",
         live: "https://laptop-e-commerce-website.vercel.app/",
@@ -42,9 +44,9 @@ export const Data = [
     {
         id: 3,
         name: "Portfolio",
-        role: "Frontend",
+        category: "Frontend",
         info: "A personal developer portfolio showcasing skills, experience, and projects. Developed using React and TailwindCSS, with attention to accessibility and visual storytelling.",
-        image: PortfolioImg,
+        images: [PortfolioImg],
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "https://github.com/Mubarak-Ade/Mubaraq-Ade",
         live: "https://mubaraq-adeshina.vercel.app/",
@@ -52,9 +54,9 @@ export const Data = [
     {
         id: 4,
         name: "Full Stack Quiz App",
-        role: "Fullstack",
+        category: "Fullstack",
         info: "An interactive quiz application built with React, Node.js, Express, and MongoDB. Supports real-time score tracking, user management, and dynamic question rendering.",
-        image: TreeviaImg,
+        images: [TreeviaImg],
         stacks: [
             "React",
             "Tailwind",
@@ -70,9 +72,9 @@ export const Data = [
     {
         id: 5,
         name: "Simple Frontend quiz app",
-        role: "Frontend",
+        category: "Frontend",
         info: "A lightweight quiz interface made with React and Framer Motion, featuring animated transitions and responsive design for smooth user interaction.",
-        image: QuizlyImg,
+        images: [QuizlyImg],
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "",
         live: "",
@@ -80,9 +82,9 @@ export const Data = [
     {
         id: 6,
         name: "Simple Weather Api website",
-        role: "Frontend",
+        category: "Frontend",
         info: "A weather app that fetches real-time weather data using an external API. Built with React and TailwindCSS, displaying clean UI with temperature and location data.",
-        image: WeatherImg,
+        images: [WeatherImg],
         stacks: ["React", "Tailwind", "weather Api"],
         github: "https://github.com/Mubarak-Ade/Mubaraq-Ade",
         live: "https://weather-sphere-iota.vercel.app/",
@@ -90,9 +92,9 @@ export const Data = [
     {
         id: 7,
         name: "Full Stack task manager ",
-        role: "Backend",
+        category: "Backend",
         info: "A task management web app that allows users to create, update, and track tasks efficiently. Built using MERN stack, with backend CRUD operations",
-        image: TaskImg,
+        images: [TaskImg],
         stacks: [
             "React",
             "Typescript",
@@ -109,9 +111,9 @@ export const Data = [
     {
         id: 8,
         name: "basic todo website",
-        role: "Frontend",
+        category: "Frontend",
         info: "A minimal task organizer built with React and TailwindCSS, allowing users to add and manage their daily tasks easily.",
-        image: TodoImg,
+        images: [TodoImg],
         stacks: ["React", "Tailwindcss"],
         github: "",
         live: "",

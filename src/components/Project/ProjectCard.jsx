@@ -1,7 +1,8 @@
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
-import { FlameAnimation } from "../Animation/FlameAnimation";
+import { FlameAnimation } from "../../Animation/FlameAnimation";
 import { Link } from "react-router";
+import { createSlug } from "../../util/slug";
 
 const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
 	const isHovered = activeIndex === index;
@@ -25,10 +26,10 @@ const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
 			onClick={() => isMobile && setActiveIndex(isHovered ? null : index)}
 			className="m4 relative max-w-sm h-full block border-2 text-white border-background shadow-custom-100 rounded-2xl space-y-4 bg-card shadow-[0_0_15px]"
 		>
-			<div className="relative md:opacity-0 opacity-100 overflow-hidden rounded-t-xl">
+			<div className="relative opacity-100 overflow-hidden rounded-t-xl">
 				<img
-					src={data.image}
-					alt={data.image}
+					src={data.images[0]}
+					alt={data.images[0]}
 					className="rounded-t-xl m-auto drop-shadow-2xl w-full h-60 object-fill"
 				/>
 				<motion.div
@@ -38,7 +39,7 @@ const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
 					transition={{ duration: 0.3 }}
 					className="flex absolute top-0 left-0 w-full h-full bg-background/50 items-center justify-center gap-5 p-4"
 				>
-					<Link to={data.github}>
+					<Link to={`${createSlug(data.name)}`}>
 						<motion.button
 							whileHover={{
 								scale: 1.1,
@@ -47,34 +48,20 @@ const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
 								color: "var(--color-primary)",
 							}}
 							whileTap={{
-								scale: 0.9,
-							}}
-							className="px-8 py-2 bg-custom-200/80 border border-primary cursor-pointer shadow-2xl shadow-custom-100 rounded-3xl "
-						>
-							Github
-						</motion.button>
-					</Link>
-					<Link to={data.live}>
-						<motion.button
-							whileHover={{
-								scale: 1.1,
 								backgroundColor: "var(--color-primary)",
-								color: "var(--color-card)",
 								border: "1px solid var(--color-card)",
+								scale: 0.6,
 							}}
-							whileTap={{
-								scale: 0.9,
-							}}
-							className="px-8 py-2 bg-custom-500/40 border-2 border-custom-300 text-custom-200 cursor-pointer rounded-3xl "
+							className="px-8 py-2 text-xs bg-custom-200/80 border border-primary cursor-pointer shadow-2xl shadow-custom-100 rounded-xl "
 						>
-							Demo
+							View Project
 						</motion.button>
 					</Link>
 				</motion.div>
 			</div>
 			<div className="space-y-2 px-5">
 				<span className="px-6 py-2 bg-custom-500/30 text-custom-500 font-semibold border-custom-500 border rounded-3xl text-sm">
-					{data.role}
+					{data.category}
 				</span>
 				<h2 className="text-xl font-bold mt-4">{data.name}</h2>
 				<p className="line-clamp-2">{data.info}</p>
