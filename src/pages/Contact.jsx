@@ -213,7 +213,7 @@ const Contact = () => {
 							alert.type === "success"
 								? "bg-green-500 shadow-green-900"
 								: "bg-red-500 shadow-red-900"
-						} flex items-center justify-between shadow-[0_0_15px]  text-white font-semibold px-4 py-4 top-20 left-1/2 -translate-x-1/2 text-center mt-2 rounded-md w-100 absolute`}
+						} flex items-center justify-between shadow-[0_0_15px]  text-white font-semibold px-4 py-4 top-20 left-1/2 -translate-x-1/2 text-center mt-2 rounded-md max-w-md w-full absolute`}
 					>
 						<BsBell />
 						<p>{alert.message}</p>
