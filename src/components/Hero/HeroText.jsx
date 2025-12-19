@@ -74,34 +74,65 @@ const HeroText = ({ activeStep }) => {
 						</motion.span>
 					))}
 			</p>
-			<motion.button
-				initial={{ opacity: 0, y: 20 }}
-				animate={
-					activeStep >= 4
-						? {
-								opacity: 1,
-								y: 0,
-						  }
-						: {}
-				}
-				whileHover={{
-					scale: 1.1,
-					backgroundColor: "var(--color-primary)",
-					boxShadow: "0 0 20px rgba(6,182,212,0.4)",
-					color: "var(--color-background)",
-					transition: {
-						duration: 0.2,
-					},
-				}}
-				whileTap={{
-					scale: 0.8,
-					backgroundColor: "var(--color-primary)",
-					color: "var(--color-background)",
-				}}
-				className="border-custom-500 border text-primary cursor-pointer px-8 py-3 rounded-lg hover:bg-blue-600 transition duration-300 shadow-lg"
-			>
-				<Link to="/about">About me</Link>
-			</motion.button>
+			<div className="flex gap-4 font-montserrat">
+				<motion.button
+					initial={{ opacity: 0, y: 20 }}
+					animate={
+						activeStep >= 4
+							? {
+									opacity: 1,
+									y: 0,
+							  }
+							: {}
+					}
+					whileHover={{
+						scale: 1.1,
+						backgroundColor: "var(--color-primary)",
+						boxShadow: "0 0 20px rgba(6,182,212,0.4)",
+						color: "var(--color-background)",
+						transition: {
+							duration: 0.2,
+						},
+					}}
+					whileTap={{
+						scale: 0.8,
+						backgroundColor: "var(--color-primary)",
+						color: "var(--color-background)",
+					}}
+					className="border-custom-500 border text-primary cursor-pointer px-8 py-2 rounded-lg hover:bg-blue-600 transition duration-300 shadow-lg"
+				>
+					<Link to="/about">About me</Link>
+				</motion.button>
+				<motion.a
+					href="/cv/Mubaraq Cv.pdf"
+					download
+					initial={{ opacity: 0, y: 20 }}
+					animate={
+						activeStep >= 4
+							? {
+									opacity: 1,
+									y: 0,
+							  }
+							: {}
+					}
+					whileHover={{
+						scale: 1.1,
+						boxShadow: "0 0 20px rgba(6,182,212,0.8)",
+						color: "var(--color-background)",
+						transition: {
+							duration: 0.2,
+						},
+					}}
+					whileTap={{
+						scale: 0.8,
+						backgroundColor: "var(--color-primary)",
+						color: "var(--color-background)",
+					}}
+					className=" bg-primary text-white cursor-pointer px-8 py-2 rounded-lg"
+				>
+					Download CV
+				</motion.a>
+			</div>
 		</div>
 	);
 };
