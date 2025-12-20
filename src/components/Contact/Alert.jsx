@@ -6,7 +6,7 @@ export const Alert = ({alert, closeAlert}) => {
 	return (
 		<AnimatePresence>
 			{alert.message && (
-				<div className="fixed top-20 flex items-center justify-center left-0 w-full">
+				<div className="fixed top-20 flex px-4 items-center justify-center left-0 w-full">
 					<motion.div
 						initial={{
 							scale: 0,

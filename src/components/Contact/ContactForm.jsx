@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { motion } from 'motion/react';
-import axios from "axios"
+import { motion } from "motion/react";
+import axios from "axios";
 
 export const ContactForm = ({ loading, onLoading, onAlert }) => {
 	const [name, setName] = useState("");
@@ -42,7 +42,6 @@ export const ContactForm = ({ loading, onLoading, onAlert }) => {
 			onLoading(false);
 		}
 	};
-    
 
 	return (
 		<form
@@ -80,16 +79,20 @@ export const ContactForm = ({ loading, onLoading, onAlert }) => {
 				></textarea>
 			</div>
 			<motion.button
-            whileHover={{
-                background: "var(--color-primary)",
-                color: "var(--color-custom-100)"
-            }}
-            whileTap={{
-                scale: 0.8
-            }}
+				whileHover={{
+					background: "var(--color-primary)",
+					color: "var(--color-custom-100)",
+				}}
+				whileTap={{
+					scale: 0.8,
+					background: "var(--color-primary)",
+					color: "var(--color-custom-100)",
+				}}
 				disabled={loading}
 				type="submit"
-				className={`bg-custom-500/20 ${loading ? "cursor-wait" : "cursor-pointer"} font-bold border border-custom-400 shadow-custom-400 text-white w-full px-2 py-2 rounded-full`}
+				className={`bg-custom-500/20 ${
+					loading ? "cursor-wait" : "cursor-pointer"
+				} font-bold border border-custom-400 shadow-custom-400 text-white w-full px-2 py-2 rounded-full`}
 			>
 				{loading ? "Sending..." : "Send Message"}
 			</motion.button>
