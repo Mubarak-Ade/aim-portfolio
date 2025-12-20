@@ -41,51 +41,7 @@ const Contact = () => {
 					<ContactBtn />
 				</div>
 			</div>
-			<AnimatePresence>
-				{alert.message && (
-					<motion.div
-						initial={{
-							scale: 0,
-							opacity: 0,
-						}}
-						animate={{
-							scale: 1,
-							opacity: 1,
-						}}
-						exit={{
-							scale: 0,
-							opacity: 0,
-						}}
-						transition={{
-							duration: 0.5,
-							type: "spring",
-							stiffness: 200,
-						}}
-						className={`${
-							alert.type === "success"
-								? "bg-green-500 shadow-green-900"
-								: "bg-red-500 shadow-red-900"
-						} flex items-center justify-between shadow-[0_0_15px]  text-white font-semibold px-4 py-4 top-20 left-1/2 -translate-x-1/2 text-center mt-2 rounded-md w-100 absolute`}
-					>
-						<BsBell />
-						<p>{alert.message}</p>
-						<motion.button
-							onClick={closeAlert}
-							whileHover={{
-								scale: 1.1,
-								backgroundColor: alert.type === "success" ? "var(--color-green-100)" : "var(--color-red-100)",
-								color: alert.type === "success" ? "var(--color-green-500)" : "var(--color-red-500)",
-							}}
-							whileTap={{
-								scale: 0.8,
-							}}
-							className="text-2xl rounded-full cursor-pointer"
-						>
-							<BsX />
-						</motion.button>
-					</motion.div>
-				)}
-			</AnimatePresence>
+			<Alert alert={alert} closeAlert={closeAlert} />
 		</div>
 	);
 };
