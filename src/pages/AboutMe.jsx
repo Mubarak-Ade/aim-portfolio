@@ -112,23 +112,25 @@ const AboutMe = () => {
 								View My Project
 							</Link>
 						</motion.button>
-						<motion.button
-							whileHover={{
-								scale: 1.1,
-								boxShadow: "1px solid var(--color-primary)",
-							}}
-							whileTap={{
-								scale: 0.8,
-								backgroundColor: "var(--color-primary)",
-								color: "var(--color-background)",
-							}}
-							transition={{
-								duration: 0.2,
-							}}
-							className="mt-4 border-cyan-500 border rounded-md shadow-2xl shadow-custom-500 font-semibold px-4 py-2.5 cursor-pointer"
-						>
-							Let Connect
-						</motion.button>
+						<Link to="/contact">
+							<motion.button
+								whileHover={{
+									scale: 1.1,
+									boxShadow: "1px solid var(--color-primary)",
+								}}
+								whileTap={{
+									scale: 0.8,
+									backgroundColor: "var(--color-primary)",
+									color: "var(--color-background)",
+								}}
+								transition={{
+									duration: 0.2,
+								}}
+								className="mt-4 border-cyan-500 border rounded-md shadow-2xl shadow-custom-500 font-semibold px-4 py-2.5 cursor-pointer"
+							>
+								Contact Me
+							</motion.button>
+						</Link>
 					</div>
 				</motion.div>
 			</div>

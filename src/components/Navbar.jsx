@@ -43,7 +43,7 @@ const Navbar = () => {
 				className="cursor-pointer rounded-xl w-full md:w-auto md:p-0 px-6 py-4"
 				key={index}
 			>
-				<NavLink className={({isActive}) => isActive && "text-primary text-shadow-xs text-shadow-primary"} to={link.link}>{link.name}</NavLink>
+				<NavLink className={({isActive}) => isActive ? "text-primary text-shadow-xs text-shadow-primary" : ""} to={link.link}>{link.name}</NavLink>
 			</motion.li>
 		));
 	};
