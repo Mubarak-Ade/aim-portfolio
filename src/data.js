@@ -23,8 +23,8 @@ export const Data = [
         info: "A Fullstack Quiz Web Application built with the MERN stack. The system supports guest and authenticated users, quiz attempts, result tracking, and admin quiz management. The architecture is designed for scalability, clean separation of concerns, and portfolio-quality presentation.",
         images: [TreeviaImage1, TreeviaImage2, TreeviaImage3, TreeviaImage4, TreeviaImage5],
         stacks: ["React", "TypeScript", "Tailwind", "Nodejs", "MongoDB", "Expressjs", "zustand"],
-        github: "",
-        live: "",
+        github: "https://github.com/Mubarak-Ade/treevia---full-stack-quiz-website",
+        live: "https://treevia-web.vercel.app/result",
     },
     {
         id: 1,
