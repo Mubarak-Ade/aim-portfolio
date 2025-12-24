@@ -30,7 +30,7 @@ const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
 				<img
 					src={data.images[0]}
 					alt={data.images[0]}
-					className="rounded-t-xl m-auto drop-shadow-2xl w-full h-60 object-fill"
+					className="rounded-t-xl m-auto drop-shadow-2xl w-full h-60 object-cover"
 				/>
 				<motion.div
 					animate={{

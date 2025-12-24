@@ -4,8 +4,8 @@ export const SlideShow = ({preview, currentIndex, onIndexChange}) => {
 	return (
 		<>
 			<AnimatePresence>
-				<div className="">
-					<div className=" max-w-3xl overflow-hidden w-full h-full max-h-80">
+				<div className="flex items-center flex-col">
+					<div className=" max-w-2xl overflow-auto w-full h-full max-h-100">
 						<motion.img
 							initial={{
 								x: -100,
@@ -22,7 +22,7 @@ export const SlideShow = ({preview, currentIndex, onIndexChange}) => {
 							key={currentIndex}
 							src={preview[currentIndex]}
 							alt={preview[currentIndex]}
-							className="rounded-xl shadow-[0_1px_20px] object-scale-down w-full overflow-hidden shadow-custom-100"
+							className="rounded-xl shadow-[0_1px_20px] object-fill w-full overflow-hidden shadow-custom-100"
 						/>
 					</div>
 					<div className="w-full flex items-center justify-center mt-4 gap-4">
