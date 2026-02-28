@@ -14,10 +14,26 @@ import TreeviaImage2 from "./assets/images/project-img/treevia_2.png";
 import TreeviaImage3 from "./assets/images/project-img/treevia_3.png";
 import TreeviaImage4 from "./assets/images/project-img/treevia_4.png";
 import TreeviaImage5 from "./assets/images/project-img/treevia_5.png";
+import ShinaStoreImage1 from "./assets/images/project-img/shina/shina-store-homepage.png";
+import ShinaStoreImage2 from "./assets/images/project-img/shina/productpage.png";
+import ShinaStoreImage3 from "./assets/images/project-img/shina/shina-store-project-detailpage.png";
+import ShinaStoreImage4 from "./assets/images/project-img/shina/cartpage.png";
+import ShinaStoreImage5 from "./assets/images/project-img/shina/ordermanagement.png";
+import ShinaStoreImage6 from "./assets/images/project-img/shina/checkoutpage.png";
 
 export const Data = [
     {
         id: 0,
+        name: "Shina Store",
+        category: "Fullstack",
+        info: "Developed a full-stack laptop e-commerce platform using React, TypeScript, Node.js, Express, and MongoDB, featuring a customer storefront, secure authentication, cart and checkout flow, and an admin dashboard for product and order management. Designed RESTful APIs with type-safe validation, implemented role-based access control, and integrated Cloudinary for media handling. The project reflects scalable architecture, clean code practices, and production-ready full-stack development.",
+        images: [ShinaStoreImage1, ShinaStoreImage2, ShinaStoreImage3, ShinaStoreImage4, ShinaStoreImage5],
+        stacks: ["React", "TypeScript", "Tailwind", "Nodejs", "MongoDB", "Expressjs", "zustand", "Tanstack query", "Zod"],
+        github: "https://github.com/Mubarak-Ade/Fullstack-Laptop-E-commerce-website",
+        live: "https://shina-store.vercel.app/",
+    },
+    {
+        id: 1,
         name: "Treevia",
         category: "Fullstack",
         info: "A Fullstack Quiz Web Application built with the MERN stack. The system supports guest and authenticated users, quiz attempts, result tracking, and admin quiz management. The architecture is designed for scalability, clean separation of concerns, and portfolio-quality presentation.",
@@ -27,7 +43,7 @@ export const Data = [
         live: "https://treevia-web.vercel.app/result",
     },
     {
-        id: 1,
+        id: 2,
         name: "Fullstack Blog Website",
         category: "Fullstack",
         info: "A full-featured blog platform with user authentication, rich post editor, comments, and an admin dashboard. Built using React + TypeScript on the frontend, Shadcn UI for components, Zustand for client state, and a Node/Express + MongoDB backend.",
@@ -37,7 +53,7 @@ export const Data = [
         live: "https://aim-blog.vercel.app",
     },
     {
-        id: 2,
+        id: 3,
         name: "Tailor design landing page",
         category: "Frontend",
         info: "A sleek landing page for a fashion brand, designed to highlight products with elegance and responsiveness. Built with React, TailwindCSS and Framer motion, focusing on modern aesthetics and smooth user experience.",
@@ -47,7 +63,7 @@ export const Data = [
         live: "https://anike-fashion.vercel.app/",
     },
     {
-        id: 3,
+        id: 4,
         name: "Laptop sales E-Commerce website",
         category: "Frontend",
         info: "A clean, minimalist e-commerce web interface for laptop sales. Features product listings, cart functionality, and responsive layouts using React and TailwindCSS.",
@@ -57,7 +73,7 @@ export const Data = [
         live: "https://laptop-e-commerce-website.vercel.app/",
     },
     {
-        id: 4,
+        id: 5,
         name: "Portfolio",
         category: "Frontend",
         info: "A personal developer portfolio showcasing skills, experience, and projects. Developed using React and TailwindCSS, with attention to accessibility and visual storytelling.",
