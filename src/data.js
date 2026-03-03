@@ -1,4 +1,8 @@
 import TailorImg from "./assets/images/project-img/tailor-screen.png";
+import HOS1 from "./assets/images/project-img/hos/hos.png"
+import HOS2 from "./assets/images/project-img/hos/hos2.png"
+import HOS3 from "./assets/images/project-img/hos/hos3.png"
+import HOS4 from "./assets/images/project-img/hos/hos4.png"
 import QuizlyImg from "./assets/images/project-img/quizly.png";
 import PortfolioImg from "./assets/images/project-img/porfolio-screen.png";
 import TaskImg from "./assets/images/project-img/task-manager-screen.png";
@@ -57,7 +61,7 @@ export const Data = [
         name: "Tailor design landing page",
         category: "Frontend",
         info: "A sleek landing page for a fashion brand, designed to highlight products with elegance and responsiveness. Built with React, TailwindCSS and Framer motion, focusing on modern aesthetics and smooth user experience.",
-        images: [TailorImg],
+        images: [HOS1, HOS2, HOS3, HOS4],
         stacks: ["React", "Tailwind", "Framer motion"],
         github: "https://github.com/Mubarak-Ade/Tailoring-Landing-page",
         live: "https://anike-fashion.vercel.app/",
