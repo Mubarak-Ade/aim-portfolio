@@ -13,7 +13,7 @@ export const ContactForm = ({ loading, onLoading, onAlert }) => {
 		onAlert({ type: "", message: "" });
 		try {
 			const res = await axios.post(
-				"https://send-message-tsfn.onrender.com/",
+				"https://send-message-tsfn.onrender.com/send",
 				{
 					name,
 					email,
