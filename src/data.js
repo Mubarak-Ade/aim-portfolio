@@ -29,7 +29,7 @@ import MemoDevImage2 from "./assets/images/project-img/memodev/memodev-create-sn
 import MemoDevImage3 from "./assets/images/project-img/memodev/register.png";
 import MemoDevImage4 from "./assets/images/project-img/memodev/project.png";
 import MemoDevImage5 from "./assets/images/project-img/memodev/search-1.png";
-import MemoDevImage5 from "./assets/images/project-img/memodev/signup.png";
+// import MemoDevImage5 from "./assets/images/project-img/memodev/signup.png";
 import MemoDevImage6 from "./assets/images/project-img/memodev/project-create.png";
 
 export const Data = [
