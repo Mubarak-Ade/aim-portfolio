@@ -3,7 +3,15 @@ import { motion } from "motion/react";
 import { Github, Rocket } from "lucide-react";
 import { Link } from "react-router";
 
-export const Header = ({ name, info, role, link, github }) => {
+type HeaderProps = {
+	name: string;
+	info: string;
+	role: string;
+	link: string;
+	github: string;
+};
+
+export const Header = ({ name, info, role, link, github }: HeaderProps) => {
 	return (
 		<>
 			<div className="flex lg:flex-row flex-col gap-5 items-center justify-center">

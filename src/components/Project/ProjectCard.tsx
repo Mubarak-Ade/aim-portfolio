@@ -1,10 +1,18 @@
 import { motion } from "motion/react";
-import React, { useEffect, useState } from "react";
 import { FlameAnimation } from "../../Animation/FlameAnimation";
 import { Link } from "react-router";
 import { createSlug } from "../../util/slug";
+import type { ProjectData } from "../../data";
 
-const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}) => {
+type ProjectCardProps = {
+	data: ProjectData;
+	index: number;
+	isMobile: boolean;
+	activeIndex: number | null;
+	setActiveIndex: (index: number | null) => void;
+};
+
+const ProjectCard = ({ data, index, isMobile, activeIndex, setActiveIndex}: ProjectCardProps) => {
 	const isHovered = activeIndex === index;
 
 	return (

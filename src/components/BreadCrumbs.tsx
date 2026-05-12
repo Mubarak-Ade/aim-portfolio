@@ -17,7 +17,7 @@ export const BreadCrumbs = () => {
 				const url = `/${pathnames.slice(0, index + 1).join("/")}`;
 
 				const label = path
-					.split()
+					.split("-")
 					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 					.join(" ");
 

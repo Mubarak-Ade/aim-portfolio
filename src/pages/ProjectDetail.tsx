@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Data } from "../data";
-import { ArrowLeft, ArrowRight, Github, Rocket } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Header } from "../components/ProjectDetail/Header";
-import { data, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { SlideShow } from "../components/ProjectDetail/SlideShow";
 import { TechnologyCard } from "../components/ProjectDetail/TechnologyCard";
 import { BreadCrumbs } from "../components/BreadCrumbs";
@@ -12,11 +12,16 @@ import { createSlug } from "../util/slug";
 export const ProjectDetail = () => {
 	const { slug } = useParams();
 	const navigate = useNavigate()
+	const [imageIndex, setImageIndex] = useState(0);
 
 	const currentIndex = Data.findIndex(
 		(data) => slug === createSlug(data.name)
 	);
 	const product = Data[currentIndex];
+
+	if (!product) {
+		return <p>Project not found</p>
+	}
 
 	const { name, info, category, images, stacks, live, github } = product;
 
@@ -26,10 +31,6 @@ export const ProjectDetail = () => {
 	const prevName = Data[prevIndex].name;
 	const nextName = Data[nextIndex].name;
 
-	if (!product) {
-		return <p>{name} Project not found</p>
-	}
-
 	const goToPrev = () => { 
 		navigate(`/projects/${createSlug(prevName)}`)
 	}
@@ -37,8 +38,6 @@ export const ProjectDetail = () => {
 	const goToNext = () => { 
 		navigate(`/projects/${createSlug(nextName)}`)
 	}
-
-	const [imageIndex, setImageIndex] = useState(0);
 
 	return (
 		<div className="mt-25 p-5 max-w-6xl m-auto w-full">

@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import type { AlertState } from "../components/Contact/Alert";
 import { Alert } from "../components/Contact/Alert";
 import { ContactBtn } from "../components/Contact/ContactBtn";
 import { ContactForm } from "../components/Contact/ContactForm";
@@ -7,10 +7,7 @@ import { ContactInfo } from "../components/Contact/ContactInfo";
 
 const Contact = () => {
 	const [loading, setLoading] = useState(false);
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [message, setMessage] = useState("");
-	const [alert, setAlert] = useState({ type: "", message: "" });
+	const [alert, setAlert] = useState<AlertState>({ type: "", message: "" });
 
 	
 	useEffect(() => {

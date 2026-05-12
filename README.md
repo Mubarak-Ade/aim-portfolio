@@ -27,33 +27,33 @@ A responsive React-based frontend for showcasing projects, skills, and professio
 ```
 src/
 ├── components/              # Reusable components
-│   ├── Navbar.jsx
-│   ├── BreadCrumbs.jsx
+│   ├── Navbar.tsx
+│   ├── BreadCrumbs.tsx
 │   ├── Contact/
-│   │   ├── ContactForm.jsx
-│   │   ├── ContactInfo.jsx
-│   │   ├── ContactBtn.jsx
-│   │   └── Alert.jsx
+│   │   ├── ContactForm.tsx
+│   │   ├── ContactInfo.tsx
+│   │   ├── ContactBtn.tsx
+│   │   └── Alert.tsx
 │   ├── Project/
-│   │   └── ProjectCard.jsx
+│   │   └── ProjectCard.tsx
 │   ├── ProjectDetail/
-│   │   ├── Header.jsx
-│   │   ├── SlideShow.jsx
-│   │   └── TechnologyCard.jsx
+│   │   ├── Header.tsx
+│   │   ├── SlideShow.tsx
+│   │   └── TechnologyCard.tsx
 │   └── Hero/
-│       ├── HeroText.jsx
-│       └── Terminal.jsx
+│       ├── HeroText.tsx
+│       └── Terminal.tsx
 ├── pages/                   # Page components
-│   ├── Home.jsx
-│   ├── AboutMe.jsx
-│   ├── Project.jsx
-│   ├── ProjectDetail.jsx
-│   ├── Contact.jsx
-│   └── Skill.jsx
+│   ├── Home.tsx
+│   ├── AboutMe.tsx
+│   ├── Project.tsx
+│   ├── ProjectDetail.tsx
+│   ├── Contact.tsx
+│   └── Skill.tsx
 ├── Animation/              # Animation components
-│   ├── FlameAnimation.jsx
-│   ├── GridAnimation.jsx
-│   └── TextAnimation.jsx
+│   ├── FlameAnimation.tsx
+│   ├── GridAnimation.tsx
+│   └── TextAnimation.tsx
 ├── assets/                 # Images, fonts, and static files
 │   ├── images/
 │   │   ├── background/
@@ -61,13 +61,13 @@ src/
 │   │   └── svg/
 │   └── font/
 ├── util/
-│   └── slug.js            # URL slug utilities
-├── App.jsx
+│   └── slug.ts            # URL slug utilities
+├── App.tsx
 ├── App.css
 ├── index.css
 ├── font.css
-├── data.js                # Projects and portfolio data
-└── main.jsx
+├── data.ts                # Projects and portfolio data
+└── main.tsx
 ```
 
 ## Installation
@@ -79,8 +79,8 @@ src/
 
 2. **Configure API endpoint**
    
-   Update the backend URL in `src/components/Contact/ContactForm.jsx`:
-   ```javascript
+   Update the backend URL in `src/components/Contact/ContactForm.tsx`:
+   ```typescript
    const res = await axios.post(
      "http://localhost:3000/",  // Change to your backend URL
      {
@@ -116,9 +116,9 @@ npm run lint
 
 ## Adding Projects
 
-Edit `src/data.js` to add new projects:
+Edit `src/data.ts` to add new projects:
 
-```javascript
+```typescript
 {
     id: n,
     name: "Project Name",

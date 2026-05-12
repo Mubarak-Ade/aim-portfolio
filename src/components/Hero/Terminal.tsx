@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { BsGithub, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const terminalCommands = [
 	{ text: "$ whoami", output: "Adeshina Ibrahim Mubaraq", delay: 0 },
@@ -18,8 +17,12 @@ const terminalCommands = [
 	},
 ];
 
-const Terminal = ({ onCommandComplete }) => {
-	const [visibleCommand, setVisibleCommand] = useState([]);
+type TerminalProps = {
+	onCommandComplete: (step: number) => void;
+};
+
+const Terminal = ({ onCommandComplete }: TerminalProps) => {
+	const [visibleCommand, setVisibleCommand] = useState<number[]>([]);
 
 	useEffect(() => {
 		terminalCommands.forEach((cmd, index) => {

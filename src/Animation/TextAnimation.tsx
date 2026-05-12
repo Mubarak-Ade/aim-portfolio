@@ -1,20 +1,31 @@
-import { AiFillCheckCircle } from "react-icons/ai"; 
-import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from "react-icons/ai";
 import React, { useEffect, useState } from 'react'
 import { motion } from "motion/react"
 // This component displays a text animation that appears after a specified timer
 // It uses the motion library for animations and React hooks for state management
 // The text prop is the text to be displayed, and timer is the delay before it appears
 
-export const TypewritingAnimation = ({ text, output, timer = 500, }) => {
+type TextAnimationProps = {
+	text: string;
+	timer?: number;
+};
+
+type TypewritingAnimationProps = TextAnimationProps & {
+	output: string;
+};
+
+type TextUpAnimationProps = TextAnimationProps & {
+	activeStep: boolean | number;
+};
+
+export const TypewritingAnimation = ({ text, output, timer = 500, }: TypewritingAnimationProps) => {
 	
 	const [display, setDisplay] = useState(false)
 
 	useEffect(() => {
-		setInterval(() => {
+		const interval = setInterval(() => {
 			setDisplay(true)
 		}, timer);
-		clearInterval()
+		return () => clearInterval(interval)
 	}, [display, timer])
 
 	return (display &&
@@ -57,7 +68,7 @@ export const TypewritingAnimation = ({ text, output, timer = 500, }) => {
 	)
 }
 
-export const TextUpAnimation = ({ text, timer = 500, activeStep}) => {
+export const TextUpAnimation = ({ text, activeStep}: TextUpAnimationProps) => {
 	return (activeStep &&
 		<h2 className='text-5xl text-white font-bold gap-4 flex items-center justify-start'>
 			{text.split(' ').map((char, index) => (
@@ -74,15 +85,15 @@ export const TextUpAnimation = ({ text, timer = 500, activeStep}) => {
 	)
 }
 
-export const TextRightAnimation = ({ text, timer = 500, }) => {
+export const TextRightAnimation = ({ text, timer = 500, }: TextAnimationProps) => {
 
 	const [display, setDisplay] = useState(false)
 
 	useEffect(() => {
-		setInterval(() => {
+		const interval = setInterval(() => {
 			setDisplay(true)
 		}, timer);
-		clearInterval()
+		return () => clearInterval(interval)
 	}, [display, timer])
 
 	return (display &&
@@ -101,15 +112,15 @@ export const TextRightAnimation = ({ text, timer = 500, }) => {
 	)
 }
 
-export const TextScaleAnimation = ({ text, timer = 500, }) => {
+export const TextScaleAnimation = ({ text, timer = 500, }: TextAnimationProps) => {
 
 	const [display, setDisplay] = useState(false)
 
 	useEffect(() => {
-		setInterval(() => {
+		const interval = setInterval(() => {
 			setDisplay(true)
 		}, timer);
-		clearInterval()
+		return () => clearInterval(interval)
 	}, [display, timer])
 
 	return (display &&

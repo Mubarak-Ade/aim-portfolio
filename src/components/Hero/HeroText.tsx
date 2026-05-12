@@ -2,7 +2,11 @@ import { motion } from "motion/react";
 import Image from "../../assets/images/Profile.png";
 import { Link } from "react-router";
 
-const HeroText = ({ activeStep }) => {
+type HeroTextProps = {
+	activeStep: number;
+};
+
+const HeroText = ({ activeStep }: HeroTextProps) => {
 	return (
 		<div className="w-full space-y-3 text-center z-10 flex flex-col justify-center items-center max-w-3xl">
 			<motion.div

@@ -1,17 +1,19 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProjectCard from "../components/Project/ProjectCard";
 import { Data } from "../data";
-import { AnimatePresence, motion } from "motion/react";
-import { FlameAnimation } from "../Animation/FlameAnimation";
+import { motion } from "motion/react";
 import { GridAnimation } from "../Animation/GridAnimation";
+import type { ProjectCategory } from "../data";
+
+type CategoryFilter = "All" | ProjectCategory;
 
 const Project = () => {
 	const [isMobile, setIsMobile] = useState(false);
-	const [activeIndex, setActiveIndex] = useState(null);
-	const containerRef = useRef();
-	const [selectedCategory, setSelectedCategory] = useState("All");
+	const [activeIndex, setActiveIndex] = useState<number | null>(null);
+	const containerRef = useRef<HTMLDivElement>(null);
+	const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("All");
 
-	const categories = ["All", "Frontend", "Backend", "Fullstack"];
+	const categories: CategoryFilter[] = ["All", "Frontend", "Backend", "Fullstack"];
 
 	const filterByCategory =
 		selectedCategory === "All"
@@ -26,9 +28,10 @@ const Project = () => {
 
 	// Close active card if clicked outside
 	useEffect(() => {
-		const handleClickOutside = (event) => {
+		const handleClickOutside = (event: MouseEvent) => {
 			if (
 				containerRef.current &&
+				event.target instanceof Node &&
 				!containerRef.current.contains(event.target)
 			) {
 				setActiveIndex(null);
@@ -39,7 +42,7 @@ const Project = () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
-	const handleSelectCategory = (select) => {
+	const handleSelectCategory = (select: CategoryFilter) => {
 		setSelectedCategory(select);
 	};
 
@@ -81,7 +84,7 @@ const Project = () => {
 						))}
 					</div>
 					<select
-						onChange={(e) => setSelectedCategory(e.target.value)}
+						onChange={(e) => setSelectedCategory(e.target.value as CategoryFilter)}
 						name="category"
 						id="category"
 						className="px-6 py-1.5 md:hidden w-full cursor-pointer text-secondary font-semibold border-secondary border rounded-3xl text-xs"
@@ -98,7 +101,7 @@ const Project = () => {
 						))}
 					</select>
 				</div>
-				<div className="grid p-10 grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-y-28  auto-rows-fr">
+				<div ref={containerRef} className="grid p-10 grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-y-28  auto-rows-fr">
 					{filterByCategory.map((data) => (
 						<ProjectCard
 							key={data.id}

@@ -1,12 +1,19 @@
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { BsLayers } from "react-icons/bs";
 import { CiMonitor } from "react-icons/ci";
 import { FaCss3, FaHtml5, FaJsSquare, FaLayerGroup, FaNodeJs, FaReact, FaServer } from "react-icons/fa";
 import { RiArrowDownSFill, RiArrowUpSFill } from "react-icons/ri";
 import { SiExpress, SiFramer, SiMongodb, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si";
 
-const data = {
+type SkillNode = {
+	title: string;
+	icon: ReactNode;
+	color: string;
+	children?: SkillNode[];
+};
+
+const data: SkillNode = {
 	title: "FullStack",
 	icon: <FaLayerGroup />,
 	color: "text-green-400",
@@ -99,7 +106,12 @@ const data = {
 
 // const grandchild  = data.children[ ]
 
-const Node = ({ node, level = 0 }) => {
+type NodeProps = {
+	node: SkillNode;
+	level?: number;
+};
+
+const Node = ({ node, level = 0 }: NodeProps) => {
 	const [expand, setExpand] = useState(true);
 	const hasChildren = node.children && node.children.length > 0;
 
@@ -162,7 +174,7 @@ const Node = ({ node, level = 0 }) => {
 						className="flex mt-10 relative gap-8"
 					>
 						<div className="absolute bg-primary h-0.5 -top-10 left-10 right-10 "></div>
-						{node.children.map((child, idx) => (
+						{node.children?.map((child, idx) => (
 							<Node
 								node={child}
 								key={idx}
@@ -176,7 +188,7 @@ const Node = ({ node, level = 0 }) => {
 	);
 };
 
-const MobileNode = ({ node, level = 0 }) => {
+const MobileNode = ({ node, level = 0 }: NodeProps) => {
 	const [expand, setExpand] = useState(true);
 	const hasChildren = node.children && node.children.length > 0;
 
@@ -236,7 +248,7 @@ const MobileNode = ({ node, level = 0 }) => {
 						}}
                     className="flex flex-col gap-4 overflow-hidden relative">
 						<div className="absolute bg-primary w-0.5 top-0 bottom-12 left-0 overflow-hidden" />
-						{node.children.map((child, idx) => (
+						{node.children?.map((child, idx) => (
 							<MobileNode
 								node={child}
 								key={idx}

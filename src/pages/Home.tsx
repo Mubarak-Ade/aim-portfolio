@@ -1,8 +1,4 @@
-import { BsLinkedin } from "react-icons/bs"; 
-import { BsTwitter } from "react-icons/bs"; 
-import { AiOutlineTwitter } from "react-icons/ai"; 
-import { BsGithub } from "react-icons/bs"; 
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 import HeroText from "../components/Hero/HeroText";
 import Terminal from "../components/Hero/Terminal";
@@ -80,7 +76,7 @@ const Home = () => {
             </div>
             <div className="flex lg:flex-row flex-col mt-20 lg:mt-0 w-full items-center gap-10 justify-center bg-cover bg-center h-full">
                 <HeroText activeStep={activeStep} />
-                <Terminal onCommandComplete={(step) => setActiveStep(step)} />
+                <Terminal onCommandComplete={(step: number) => setActiveStep(step)} />
             </div>
         </div>
     );

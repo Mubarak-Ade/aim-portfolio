@@ -1,4 +1,4 @@
-export const createSlug = (name) => {
+export const createSlug = (name: string) => {
 	return name
 		.toLowerCase()
 		.replace(/[^a-z0-9]+/g, "-")

@@ -1,8 +1,17 @@
 import { motion, AnimatePresence } from "motion/react";
-import React from "react";
 import { BsBell, BsX } from "react-icons/bs";
 
-export const Alert = ({alert, closeAlert}) => {
+export type AlertState = {
+	type: "success" | "error" | "";
+	message: string;
+};
+
+type AlertProps = {
+	alert: AlertState;
+	closeAlert: () => void;
+};
+
+export const Alert = ({ alert, closeAlert }: AlertProps) => {
 	return (
 		<AnimatePresence>
 			{alert.message && (

@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "motion/react";
 import axios from "axios";
+import type { AlertState } from "./Alert";
 
-export const ContactForm = ({ loading, onLoading, onAlert }) => {
+type ContactFormProps = {
+	loading: boolean;
+	onLoading: (loading: boolean) => void;
+	onAlert: (alert: AlertState) => void;
+};
+
+export const ContactForm = ({ loading, onLoading, onAlert }: ContactFormProps) => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 
-	const handleMessageSubmit = async (e) => {
+	const handleMessageSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		onLoading(true);
 		onAlert({ type: "", message: "" });
@@ -29,10 +36,11 @@ export const ContactForm = ({ loading, onLoading, onAlert }) => {
 			});
 		} catch (error) {
 			console.error(error);
+			const fallback = "Failed to send message. Try again";
 			const message =
-				error.response?.data?.message || // server-sent error
-				error.message || // Axios network error
-				"Failed to send message. Try again";
+				axios.isAxiosError<{ message?: string }>(error)
+					? error.response?.data?.message || error.message || fallback
+					: fallback;
 
 			onAlert({
 				type: "error",

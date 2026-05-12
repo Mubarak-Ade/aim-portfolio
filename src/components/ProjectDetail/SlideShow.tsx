@@ -1,6 +1,12 @@
 import { AnimatePresence, motion } from "motion/react";
 
-export const SlideShow = ({preview, currentIndex, onIndexChange}) => {
+type SlideShowProps = {
+	preview: string[];
+	currentIndex: number;
+	onIndexChange: (index: number) => void;
+};
+
+export const SlideShow = ({ preview, currentIndex, onIndexChange }: SlideShowProps) => {
 	return (
 		<>
 			<AnimatePresence>

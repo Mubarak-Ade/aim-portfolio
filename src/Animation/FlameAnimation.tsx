@@ -1,7 +1,11 @@
 import React from "react";
 import { motion } from "motion/react";
 
-export const FlameAnimation = ({ isHovered }) => {
+type FlameAnimationProps = {
+	isHovered: boolean;
+};
+
+export const FlameAnimation = ({ isHovered }: FlameAnimationProps) => {
 	const variants = {
 		initial: {
 			opacity: 0,

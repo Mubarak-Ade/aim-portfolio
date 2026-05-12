@@ -1,5 +1,9 @@
 
-export const TechnologyCard = ({stacks}) => {
+type TechnologyCardProps = {
+	stacks: string[];
+};
+
+export const TechnologyCard = ({ stacks }: TechnologyCardProps) => {
 	return (
 		<div className="text-secondary rounded-xl p-4 h-full bg-card">
 			<h4 className="text-white text-xl font-bold">Technologies</h4>

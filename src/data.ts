@@ -32,7 +32,20 @@ import MemoDevImage5 from "./assets/images/project-img/memodev/search-1.png";
 // import MemoDevImage5 from "./assets/images/project-img/memodev/signup.png";
 import MemoDevImage6 from "./assets/images/project-img/memodev/project-create.png";
 
-export const Data = [
+export type ProjectCategory = "Frontend" | "Backend" | "Fullstack";
+
+export type ProjectData = {
+    id: number;
+    name: string;
+    category: ProjectCategory;
+    info: string;
+    images: string[];
+    stacks: string[];
+    github: string;
+    live: string;
+};
+
+export const Data: ProjectData[] = [
     {
         id: 0,
         name: "Memo Dev",
